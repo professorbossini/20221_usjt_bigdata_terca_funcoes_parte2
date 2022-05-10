@@ -82,9 +82,27 @@ s
 
 cat(s)
 ############################################################
+#5.  Obtenha as medidas de posição e variabilidade para a variável Idade do conjunto de dados como um todo. Façamos um teste com arq['Idade'] para ver o problema quando manipulamos um dataframe
+arq['Idade']
+class(arq['Idade'])
+mean(arq['Idade'])
 
+arq[, 'Idade']
+class(arq[, 'Idade'])
 
+mean (arq[, 'Idade'])
 
+idade_tot <- arq$Idade;idade_tot
+class(idade_tot)
+
+s_idade_total <- sprintf(
+  'Média: %.2f\nMediana: %.2f\nVariância: %.2f\nDesvio padrão: %.2f\n',
+  mean(idade_tot),
+  median(idade_tot),
+  var(idade_tot),
+  sd(idade_tot)
+)
+cat(s_idade_total)
 
 
 
