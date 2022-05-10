@@ -57,11 +57,31 @@ summary(arq[arq$Grupo==4, 'Idade'])
 summary(arq[arq$Grupo==1, 'Idade'])
 
 par(mfrow = c(1, 1))
+############################################################
+#4. Compare a glicose dos pacientes falso positivos e dos falso negativos. Para isso, use a média, a mediana, a variância e o desvio padrão. 
 
+gfp <- arq[arq$Grupo==4, 'GL'];gfp
 
+gfn <- arq[arq$Grupo==1, 'GL']; gfn
 
+s <- sprintf(
+  "Resultados\nMédia(gfp): %.2f\nMédia(gfn): %.2f\nMediana(gfp): %.2f\nMediana(gfn): %.2f\nVariância(gfp): %.2f\nVariância(gfn): %.2f\nDesvio padrão(gfp): %.2f\nDesvio padrão(gfn): %.2f\n",
+  mean(gfp),
+  mean(gfn),
+  median(gfp),
+  median(gfn),
+  var(gfp),
+  var(gfn),
+  sd(gfp),
+  sd(gfn)
+)
 
+print(s)
 
+s
+
+cat(s)
+############################################################
 
 
 
