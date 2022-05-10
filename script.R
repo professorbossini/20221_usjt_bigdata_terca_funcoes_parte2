@@ -36,6 +36,29 @@ par(mfrow=c(1, 1))
 #fazer um boxplot para cada grupo
 #e verificar o resultado de summary para cada grupo
 
+par(mfrow = c(1, 2))
+#idade dos falsos positivos: 4
+boxplot(
+  arq[arq$Grupo==4, 'Idade'],
+  main = "Falso positivo",
+  ylab = 'Idade',
+  col = "lightblue"
+)
+
+#idade dos falsos negativos: 1
+boxplot(
+  arq[arq$Grupo==1, 'Idade'],
+  main = "Falso negativo",
+  ylab = "Idade",
+  col = 'lightgreen'
+)
+
+summary(arq[arq$Grupo==4, 'Idade'])
+summary(arq[arq$Grupo==1, 'Idade'])
+
+par(mfrow = c(1, 1))
+
+
 
 
 
