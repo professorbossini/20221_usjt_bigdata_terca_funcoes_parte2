@@ -32,3 +32,18 @@ hist(
 )
 par(mfrow=c(1, 1))
 ############################################################
+#3. Médicos afirmam que o grupo dos falso positivos é mais jovem do que o dos falso negativos. O que você diria a respeito? Justifique sua resposta baseando-se em gráficos e medidas de tendência central.
+#fazer um boxplot para cada grupo
+#e verificar o resultado de summary para cada grupo
+
+
+
+
+
+
+
+
+
+
+
+
