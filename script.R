@@ -87,6 +87,9 @@ arq['Idade']
 class(arq['Idade'])
 mean(arq['Idade'])
 
+arq['Idade']
+arq[ , 'Idade']
+
 arq[, 'Idade']
 class(arq[, 'Idade'])
 
@@ -103,7 +106,50 @@ s_idade_total <- sprintf(
   sd(idade_tot)
 )
 cat(s_idade_total)
+###############################################################################
+#6.  Faça o mesmo do exercício 5, mas agora para cada tipo de diagnóstico. Compare os resultados obtidos. Construa um data frame para idade e para facilitar a visualização e a comparação.
 
+#             total falso_negativo negativo positivo falso_positivo
+#média            54            45
+#mediana
+#variância
+#desvio padrão
+
+#construir quatro estruturas de dados: cada uma tem a coleção de idades de um dos grupos
+#FN: 1
+#N: 2
+#P: 3
+#FP: 4
+idade_fn = arq[arq$Grupo==1, 'Idade']
+idade_n = arq[arq$Grupo==2, 'Idade']
+idade_p = arq[arq$Grupo==3, 'Idade']
+idade_fp = arq[arq$Grupo==4, 'Idade']
+
+#construir mais uma estrutura de dados com todas as idades
+idade_tot <- arq[, 'Idade']
+
+#para cada estrutura, construir um vetor contendo sua média, mediana, variância e desvio padrão (dica: use c(mean(col1), median(col1)...))
+v_tot <- c (mean(idade_tot), median(idade_tot), var(idade_tot), sd(idade_tot));v_tot
+v_fn <- c(mean(idade_fn), median(idade_fn), var(idade_fn), sd(idade_fn));v_fn
+v_n <- c(mean(idade_n), median (idade_n), var(idade_n), sd(idade_n)); v_n
+v_p <- c(mean(idade_p), median(idade_p), var(idade_p), sd(idade_p)); v_p
+v_fp <- c(mean(idade_fp), median(idade_fp), var(idade_fp), sd(idade_fp)); v_fp
+
+
+#um vetor com os nomes das linhas nomes c('média', 'mediana'...)
+nomes_das_linhas <- c('Média', 'Mediana', "Variância", "Desvio Padrão")
+#construir o data frame com data.frame
+
+df <- data.frame(
+  total=v_tot,
+  falso_negativo=v_fn,
+  negativo=v_n,
+  positivo=v_p,
+  falso_positivo=v_fp,
+  row.names=nomes_das_linhas
+); df
+
+#o vetor de nomes se encaixa no parâmetro row.names do dataframe
 
 
 
