@@ -171,4 +171,14 @@ summary(arq100)
 #is.na
 any(is.na(arq))
 #########################################################################
-
+#9. Qual a menor idade comum aos 4 grupos de diagnósticos?
+#usar idade_fp, idade_n, idade_p, idade_fn
+#usar intersect para encontrar valores em comum em duas coleções
+#intersect(c(1, 2), c(1, 3), c(3))
+#intersect somente opera com dois operandos
+#min
+idades_falsos <- intersect(idade_fp, idade_fn);idades_falsos
+idades_verdadeiros <- intersect(idade_p, idade_n);idades_verdadeiros
+idades_comuns <- intersect(idades_falsos, idades_verdadeiros);idades_comuns
+min(idades_comuns)
+#########################################################################
