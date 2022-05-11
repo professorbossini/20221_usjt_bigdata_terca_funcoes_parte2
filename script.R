@@ -165,4 +165,10 @@ arq100 <- arq[is.element(arq$Ident, sample(arq$Ident, 100)), ];arq100
 summary(arq)
 summary(arq100)
 #########################################################################
+#8Como você pode verificar, com certeza, se há algum valor NA no arquivo cancer.txt?
+#?any
+#any
+#is.na
+any(is.na(arq))
+#########################################################################
 
