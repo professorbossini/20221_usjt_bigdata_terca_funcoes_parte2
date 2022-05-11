@@ -182,3 +182,19 @@ idades_verdadeiros <- intersect(idade_p, idade_n);idades_verdadeiros
 idades_comuns <- intersect(idades_falsos, idades_verdadeiros);idades_comuns
 min(idades_comuns)
 #########################################################################
+
+#Um dos datasets padrão do R é o precip, que contém os dados de precipitação pluviométrica de várias cidades americanas. Este dataset é um vetor nomeado. Para os próximos exercícios carregue os índices deste vetor nomeado para uma variável. 
+
+#10. Qual a cidade com o nome mais longo?
+
+?precip
+precip
+
+nomes <- names(precip);nomes
+
+nchar(nomes)
+
+max(nchar(nomes))
+nchar(nomes)==max(nchar(nomes))
+
+nomes[nchar(nomes)==max(nchar(nomes))]
