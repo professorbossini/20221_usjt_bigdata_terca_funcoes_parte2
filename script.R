@@ -139,7 +139,7 @@ v_fp <- c(mean(idade_fp), median(idade_fp), var(idade_fp), sd(idade_fp)); v_fp
 #um vetor com os nomes das linhas nomes c('média', 'mediana'...)
 nomes_das_linhas <- c('Média', 'Mediana', "Variância", "Desvio Padrão")
 #construir o data frame com data.frame
-
+#o vetor de nomes se encaixa no parâmetro row.names do dataframe
 df <- data.frame(
   total=v_tot,
   falso_negativo=v_fn,
@@ -149,8 +149,20 @@ df <- data.frame(
   row.names=nomes_das_linhas
 ); df
 
-#o vetor de nomes se encaixa no parâmetro row.names do dataframe
+
+##########################################################################
+#7. Crie uma amostra aleatória do arquivo cancer.txt com 100 linhas e faça o sumário de medidas de posição. Compare as medidas de posição da variável Idade da amostra com as medidas de posição da variável Idade do conjunto completo. O que você observa?
+sample(c(1, 2, 3), 4, replace = T)
 
 
+sample(arq$Ident, 100)
 
+is.element(arq$Ident, sample(arq$Ident, 100))
+
+#
+arq100 <- arq[is.element(arq$Ident, sample(arq$Ident, 100)), ];arq100
+
+summary(arq)
+summary(arq100)
+#########################################################################
 
